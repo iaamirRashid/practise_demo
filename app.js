@@ -7,11 +7,6 @@ const port = 2000;
 app.get("/rrot", (req, res) => {
     res.send("this is root path");
 })
-
-app.get("/about", (req, res) => {
-     res.send("this is about path");
-})
-
 app.get("/:username", (req, res) => {
     let {username} = req.params;
     res.send(`this is ${username} path`);
@@ -25,6 +20,8 @@ app.get("/search", (req, res) => {
         res.send(`there are the results for : ${q}`);
     }
 })
+
+
 
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
