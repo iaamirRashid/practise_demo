@@ -4,6 +4,9 @@ const app = express();
 
 const port = 2000;
 
+app.get("/random", (req, res) => {
+    res.send("this is random Path");
+})
 
 app.get("/:username", (req, res) => {
     let {username} = req.params;
@@ -18,7 +21,6 @@ app.get("/search", (req, res) => {
         res.send(`there are the results for : ${q}`);
     }
 })
-
 
 
 app.listen(port, () => {
